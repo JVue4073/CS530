@@ -99,20 +99,23 @@ std::vector<textRecordLine> pass2(std::vector<std::string> sourceLines, SymbolTa
             currentLine.hexInstruction = tempObjectCode;
             listingFile.push_back(currentLine);
         }
-            //TODO: write listing line
+            /**
+             * Completed these lines here - Joseph
+            */
+            //write listing line
             listingFile.push_back(currentLine);
 
-            //TODO: write last text record to object program
+            //write last text record to object program
             textRecLine.recordLength = toHex(textRecLine.getLength(), 2);
             locctr.incrementLocationCounter(textRecLine.getLength());
             textRecord.push_back(textRecLine);
 
-            //TODO: write END record to object program
+            //write END record to object program
             textRecordLine endRecord;
             endRecord.setNewObjLine("E", currentLine);
             textRecord.push_back(endRecord);
 
-            //TODO: write last listing line
+            //write last listing line
             listingFile.push_back(currentLine);
         }
 
